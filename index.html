@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>My weather</title>
+    <link rel="icon" type="image/x-icon" href="assets/cloudy.ico" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="city">
+        <div class="place">
+          <svg class="icon" width="15" height="26" viewBox="0 0 21 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M10.5 32C15 26 21 16.299 21 10.5C21 4.70101 16.299 0 10.5 0C4.70101 0 0 4.70101 0 10.5C0 16.299 6 26 10.5 32ZM10.5 13C12.433 13 14 11.433 14 9.5C14 7.567 12.433 6 10.5 6C8.567 6 7 7.567 7 9.5C7 11.433 8.567 13 10.5 13Z"
+              fill="currentColor"
+            />
+          </svg>
+          <h1 class="placeName"></h1>
+        </div>
+        <div class="date"></div>
+      </div>
+      <div class="weather">
+        <div class="condition">
+          <img class="conditionIcon" src="" alt="" />
+          <div class="conditionText"></div>
+        </div>
+        <div class="weatherTemp"></div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
