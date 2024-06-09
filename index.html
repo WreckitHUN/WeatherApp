@@ -9,27 +9,142 @@
     <link rel="icon" type="image/x-icon" href="assets/cloudy.ico" />
   </head>
   <body>
+    <dialog class="loading">
+      <div class="loadingContainer">
+        <svg class="loadingIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+          <linearGradient id="a5">
+            <stop offset="0" stop-color="#CCCCCC" stop-opacity="0"></stop>
+            <stop offset="1" stop-color="#CCCCCC"></stop>
+          </linearGradient>
+          <circle
+            fill="none"
+            stroke="url(#a5)"
+            stroke-width="15"
+            stroke-linecap="round"
+            stroke-dasharray="0 44 0 44 0 44 0 44 0 360"
+            cx="100"
+            cy="100"
+            r="70"
+            transform-origin="center"
+          >
+            <animateTransform
+              type="rotate"
+              attributeName="transform"
+              calcMode="discrete"
+              dur="2"
+              values="360;324;288;252;216;180;144;108;72;36"
+              repeatCount="indefinite"
+            ></animateTransform>
+          </circle>
+        </svg>
+      </div>
+    </dialog>
     <div class="container">
       <div class="city">
-        <div class="place">
-          <svg class="icon" width="15" height="26" viewBox="0 0 21 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M10.5 32C15 26 21 16.299 21 10.5C21 4.70101 16.299 0 10.5 0C4.70101 0 0 4.70101 0 10.5C0 16.299 6 26 10.5 32ZM10.5 13C12.433 13 14 11.433 14 9.5C14 7.567 12.433 6 10.5 6C8.567 6 7 7.567 7 9.5C7 11.433 8.567 13 10.5 13Z"
-              fill="currentColor"
-            />
-          </svg>
-          <h1 class="placeName"></h1>
+        <div>
+          <div class="place">
+            <svg class="icon" width="15" height="26" viewBox="0 0 21 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M10.5 32C15 26 21 16.299 21 10.5C21 4.70101 16.299 0 10.5 0C4.70101 0 0 4.70101 0 10.5C0 16.299 6 26 10.5 32ZM10.5 13C12.433 13 14 11.433 14 9.5C14 7.567 12.433 6 10.5 6C8.567 6 7 7.567 7 9.5C7 11.433 8.567 13 10.5 13Z"
+                fill="currentColor"
+              />
+            </svg>
+            <h1 class="placeName">Balmazújváros</h1>
+          </div>
+          <div class="date">Today, Jun 24</div>
         </div>
-        <div class="date"></div>
+        <div class="rain">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_9_4)">
+              <path
+                d="M12 1.00002C7.32901 1.38927 6.38276 5.91359 6.48885 8.30672C6.49364 8.41486 6.41493 8.50811 6.30783 8.52383C4.58323 8.77689 1.38519 10.2629 1 14.5C0.6 18.9 4.49999 20.3333 6.49999 20.5H26C28 20.5 30.6 20.4 31 16C31.4258 11.3158 28.2745 11.1662 26.3673 11.4401C26.2095 11.4628 26.0807 11.3034 26.1297 11.1517C26.5491 9.8539 26.6855 7.45704 24.5 6.00002C22.3266 4.55113 20.2626 5.17967 19.2733 5.80637C19.1454 5.8874 18.9658 5.82016 18.9285 5.67341C18.4462 3.776 16.5286 0.622639 12 1.00002Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <rect
+                y="27.7907"
+                width="6.68649"
+                height="2"
+                rx="1"
+                transform="rotate(-60 0 27.7907)"
+                fill="currentColor"
+              />
+              <rect
+                x="3"
+                y="30.7907"
+                width="6.68649"
+                height="2"
+                rx="1"
+                transform="rotate(-60 3 30.7907)"
+                fill="currentColor"
+              />
+              <rect
+                x="9"
+                y="27.7907"
+                width="6.68649"
+                height="2"
+                rx="1"
+                transform="rotate(-60 9 27.7907)"
+                fill="currentColor"
+              />
+              <rect
+                x="18"
+                y="27.7907"
+                width="6.68649"
+                height="2"
+                rx="1"
+                transform="rotate(-60 18 27.7907)"
+                fill="currentColor"
+              />
+              <rect
+                x="21"
+                y="30.7907"
+                width="6.68649"
+                height="2"
+                rx="1"
+                transform="rotate(-60 21 30.7907)"
+                fill="currentColor"
+              />
+              <rect
+                x="12"
+                y="30.7907"
+                width="6.68649"
+                height="2"
+                rx="1"
+                transform="rotate(-60 12 30.7907)"
+                fill="currentColor"
+              />
+              <rect
+                x="27"
+                y="27.7907"
+                width="6.68649"
+                height="2"
+                rx="1"
+                transform="rotate(-60 27 27.7907)"
+                fill="currentColor"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_9_4">
+                <rect width="32" height="32" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+
+          <div>
+            <div>Chance of rain</div>
+            <div class="chanceRain">75%</div>
+          </div>
+        </div>
       </div>
       <div class="weather">
         <div class="condition">
           <img class="conditionIcon" src="" alt="" />
-          <div class="conditionText"></div>
+          <div class="conditionText">Cloudy</div>
         </div>
-        <div class="weatherTemp"></div>
+        <div class="weatherTemp">23 °C</div>
       </div>
     </div>
     <script src="index.js"></script>

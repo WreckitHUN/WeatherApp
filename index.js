@@ -7,6 +7,7 @@ async function getWeather(city) {
             throw new Error(`${errorResponse.error.message}`);
         }
         const data = await response.json();
+        console.log(data);
         return createWeatherObject(data);
     } catch (error) {
         // This will return API error message
@@ -22,7 +23,7 @@ const createWeatherObject = (data) => {
     // Extract the hour without leading zeros
     const nowHour = nowInTz.getHours();
     // Format the date as "Today, Jun 24"
-    const optionsDate = { month: 'short', day: 'numeric', timeZone: tzId };
+    const optionsDate = { month: 'short', day: 'numeric'};
     const today_date = `Today, ${nowInTz.toLocaleDateString('en-US', optionsDate)}`;
 
     // Function to create hourly forecast
@@ -55,28 +56,37 @@ const createWeatherObject = (data) => {
     };
 };
 
-getWeather(city = "Balmazújváros")
-.then((data) => {
-    // update DOM
-    if (typeof data === "string"){
+const searchCity = (city) => {
+    // Loading screen
+    const loading = document.querySelector(".loading");
+    loading.showModal();
+    setTimeout(() => loading.close(), 5000);
+    getWeather(city)
+    .then((data) => {
+        if (typeof data === "string"){
+            console.log(data);
+            return;
+        }
+        loading.close();
         console.log(data);
-        return;
-    }
-    console.log(data);
-    updateContainer(data);
-});
-
-const updateContainer = (city) => {
+        updateContainer(data);
+    });
+}
+const updateContainer = async (city) => {
     // Get the DOM elements
     const placeName = document.querySelector(".placeName");
     const date = document.querySelector(".date");
     const conditionIcon = document.querySelector(".conditionIcon");
     const conditionText = document.querySelector(".conditionText");
     const weatherTemp = document.querySelector(".weatherTemp");
+    const chanceRain = document.querySelector(".chanceRain");
     
     placeName.textContent = city.current.city_name === "Balmazújvárosi" ? "Balmazújváros" : city.current.city_name;
     date.textContent = city.current.today_date;
-    conditionIcon.src = city.current.icon;
+    conditionIcon.src = await city.current.icon;
     conditionText.textContent = city.current.condition;
     weatherTemp.textContent = `${city.current.temp_c} °C`;
+    chanceRain.textContent = `${city.current.chance_of_rain} %`;
 }
+
+searchCity("Balmazújváros");

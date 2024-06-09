@@ -53,8 +53,7 @@ body{
 
 .city{
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: 10px;
     margin-bottom: 20px;
 }
@@ -62,6 +61,12 @@ body{
 .place{
     display: flex;
     gap: 10px;
+    align-items: center;
+}
+
+.rain{
+    display: flex;
+    gap: 20px;
     align-items: center;
 }
 
@@ -80,4 +85,24 @@ body{
 .weatherTemp{
     font-size: 8rem;
     
+}
+
+.loading{
+    border: none;
+    outline: none;
+    background: none;
+    height: 100%;
+    width: 100%;
+}
+
+.loadingIcon{
+    width: 100px;
+}
+
+.loadingContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
