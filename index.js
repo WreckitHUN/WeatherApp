@@ -89,4 +89,12 @@ const updateContainer = async (city) => {
     chanceRain.textContent = `${city.current.chance_of_rain} %`;
 }
 
-searchCity("Balmazújváros");
+const form = document.querySelector(".form");
+const input = document.querySelector(".cityInput");
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    searchCity(input.value);
+    input.value = "";
+})
+

@@ -66,8 +66,15 @@ body{
 
 .rain{
     display: flex;
+    flex-direction: column;
     gap: 20px;
     align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+    .rain{
+        flex-direction: row;
+    }
 }
 
 .weather{
@@ -105,4 +112,20 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.form{
+    font-weight: bold;
+    margin-top: 50px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cityInput{
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    border: none;
+    outline: none;
 }
